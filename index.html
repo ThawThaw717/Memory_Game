@@ -298,9 +298,9 @@
         const box = document.querySelector(".box")
         const showMessageBox = document.querySelector(".showMessageBox")
 
-        const trueSound = new Audio("true.wav")
-        const falseSound =  new Audio('false.wav')
-        const winSound = new Audio("win.mp3")
+        const trueSound = new Audio("/sounds/true.wav")
+        const falseSound =  new Audio('/sounds/false.wav')
+        const winSound = new Audio("/sounds/win.mp3")
 
         const images = [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShl6ewD3Iko7l5qq0VXZ-ItAyXRbaCo2SDSg&s",
@@ -377,10 +377,14 @@
 
 
             if(firstPick.querySelector(".back img").src  === secondPick.querySelector(".back img").src){
+                trueSound.pause();
+                trueSound.currentTime = 0; 
                 trueSound.play();
                 score++;
                 scoreSpan.textContent= score;
                 if (score === 6){
+                    winSound.pause();
+                    winSound.currentTime = 0;
                     winSound.play()
                     let message = "";
                     const time = `${minutes} : ${seconds < 10 ? "0" + seconds : seconds}`;
@@ -417,6 +421,8 @@
                 firstPick = null;
                 secondPick = null;
             }else {
+                falseSound.pause();
+                falseSound.currentTime = 0;
                 falseSound.play()
                 isBoardLocked= true; //ပုံနှစ်ပုံမညီတာသွားစစ်နေစဉ်အတွင်း ကျန်တာတွေကိုနှိပ်လို့မရအောင်ပိတ်ထားမယ်
                 setTimeout(()=> {
