@@ -135,10 +135,6 @@
 
         
         .showMessageBox {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 5px;
             width: 600px;
             border: 5px solid transparent;
             background: linear-gradient(#15485a,#151515) padding-box,
@@ -173,7 +169,87 @@
             margin-left: 195px;
         }
 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
 
+            .stuff {
+                width: 450px;
+                font-size: 18px;
+            }
+
+            .start button {
+                padding: 9px 10px;
+            }
+
+            .box {
+                padding: 25px;
+                gap: 15px;
+            }
+
+            .card {
+                width: 100px;
+                height: 100px;
+
+            }
+
+            .showMessageBox {
+                width: 500px;
+                padding: 20px;
+            }
+
+            .showMessageBox div {
+                font-size: 1.3rem;
+            }
+
+            .restartBtn {
+                margin-left: 170px;
+            }
+        }
+
+        @media (max-width: 479px) {
+            h1 {
+                font-size: 2rem;
+                
+            }
+
+            .stuff{
+                width: 380px;
+                font-size: 13px;
+                margin: 20px 0px;
+            }
+
+            .start button {
+                padding: 7px 6px;
+                font-size: 9px;
+            }
+
+            .box {
+                padding:15px;
+                gap: 10px;
+                border: 4px solid transparent;
+            }
+
+            .card {
+                width: 70px;
+                height: 70px;
+
+            }
+
+            .showMessageBox {
+                width: 300px;
+                padding: 20px;
+            }
+
+            .showMessageBox div {
+                font-size: 1rem;
+            }
+
+            .restartBtn {
+                margin-left: 70px;
+            }
+        }
      
     </style>
 </head>
